@@ -1,0 +1,4 @@
+.customer-item.selected {
+    background-color: #cceecc;
+    border: 2px solid #00cc00;
+}

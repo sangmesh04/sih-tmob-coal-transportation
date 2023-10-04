@@ -1,0 +1,189 @@
+/* Neon Glow Animation */
+@keyframes neonGlow {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(0, 255, 153, 0.8));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 20px rgba(0, 255, 153, 0.8));
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(12, 12, 12, 0.85));
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+    border-bottom: 2px solid transparent;
+    width: 100%;
+}
+
+.navbar.active {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(12, 12, 12, 0.85));
+    border-bottom: 2px solid #00ff99;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+}
+
+.close-icon {
+    cursor: pointer;
+    display: none;
+}
+
+.menu-icon-svg,
+.close-icon-svg {
+    width: 35px;
+    height: 35px;
+    fill: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    /* Change the fill color to white */
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.nav-menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    /* Pushes items to the right */
+}
+
+.nav-item {
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00ff99;
+    transform: translateY(-2px);
+}
+
+.mobile-option {
+    display: none;
+}
+
+.sign-up {
+    background: linear-gradient(45deg, #00ff99, #007bff);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.sign-up:hover {
+    background: linear-gradient(45deg, #007bff, #00ff99);
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .close-icon {
+        display: block;
+    }
+
+    .navbar {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(12, 12, 12, 0.95));
+    }
+
+    .navbar.active {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(12, 12, 12, 0.95));
+    }
+
+    .navbar-logo {
+        transform: scale(1.05);
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-item {
+        margin: 0;
+        padding: 15px 0;
+        text-align: center;
+        border-bottom: 1px solid #00ff99;
+    }
+
+    .mobile-option {
+        display: block;
+    }
+
+    .menu-icon-svg,
+    .close-icon-svg {
+        width: 35px;
+        height: 35px;
+        fill: #fff;
+        /* Change the fill color to white */
+        animation: neonGlow 1.5s infinite alternate;
+    }
+
+    .sign-up {
+        animation: none;
+        /* Remove button pulse animation on mobile */
+    }
+}

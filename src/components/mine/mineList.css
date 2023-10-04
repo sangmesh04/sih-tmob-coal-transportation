@@ -1,0 +1,4 @@
+.mine-item.selected {
+    background-color: #ffcccb;
+    border: 2px solid #ff0000;
+}
